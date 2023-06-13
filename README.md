@@ -17,65 +17,8 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 # 埋点事件名称说明
 
-### 登录
+### 简介
 
-| 事件 | 事件名 | 参数 |
+| Vue版本 | UI组件库 | 参数 |
 | :--: | :----: | :--: |
-| 登录 | login  |  -   |
-| 登出 | logout |  -   |
-
-### 首页
-
-|     事件     |     事件名     | 参数 |
-| :----------: | :------------: | :--: |
-|  去告警列表  | alert_overview |  -   |
-| 更多告警按钮 |   more_alert   |  -   |
-
-### kyt
-
-|          事件           |        事件名         |                参数                 |
-| :---------------------: | :-------------------: | :---------------------------------: |
-|          搜索           |      kyt_search       | type: address(地址)/tx(交易); chain |
-|     评分页切换币种      |   kyt_switch_token    |                token                |
-| 评分页跳转 path_tracing | kyt_view_path_tracing |                  -                  |
-
-### monitor
-
-|      事件      |     事件名     | 参数 |
-| :------------: | :------------: | :--: |
-|    删除监控    | monitor_delete |  -   |
-| 激活、禁用监控 | monitor_switch |  -   |
-|    创建监控    | monitor_create |  -   |
-|    编辑监控    |  monitor_edit  |  -   |
-
-### alert
-
-|   事件   |    事件名    | 参数 |
-| :------: | :----------: | :--: |
-| 切换 tab |  alert_tab   | tab  |
-| 删除告警 | alert_delete |  -   |
-| 忽略告警 | alert_ignore |  -   |
-| 编辑告警 |  alert_edit  |  -   |
-
-### path-tracing
-
-|   事件   |          事件名           | 参数  |
-| :------: | :-----------------------: | :---: |
-|   搜索   |    path_tracing_search    | chain |
-| 切换币种 | path_tracing_switch_token | token |
-
-### sanction-list
-
-|      事件      |      事件名       | 参数 |
-| :------------: | :---------------: | :--: |
-|    删除制裁    |  sanction_delete  |  -   |
-| 激活，禁用制裁 |  sanction_switch  |  -   |
-|  下载制裁模板  | sanction_download |  -   |
-|    上传制裁    |  sanction_upload  |  -   |
-|  编辑制裁地址  |   sanction_edit   |  -   |
-
-### score-rule
-
-|   事件   |      事件名       | 参数 |
-| :------: | :---------------: | :--: |
-| 规则改动 | score_rule_change |  -   |
+| 3.0  | Element UI | - |
