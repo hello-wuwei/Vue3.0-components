@@ -1,0 +1,21 @@
+.ellipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 默认输入框清空按钮图标太糊，更改为自定义字体图标
+.el-input__clear {
+  height: 30px !important;
+  svg {
+    display: none;
+  }
+  font-style: normal;
+  &:after {
+    font-size: 16px;
+    font-family: 'iconfont';
+    color: #001640;
+    content: '\e70b';
+  }
+}
+

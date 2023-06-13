@@ -1,0 +1,80 @@
+// styles/element/index.scss
+/* 只需要重写你需要的即可 */
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #7033ff,
+      'light-3': '#5f1bff'
+    ),
+    'success': (
+      'base': #17c1a3,
+    ),
+    'warning': (
+      'base': #feae45,
+    ),
+    'danger': (
+      'base': #f24545,
+    ),
+    'error': (
+      'base': #f24545,
+    ),
+    'info': (
+      'base': #262b33,
+    ),
+  ),
+  $font-family: (
+    '': 'Poppins',
+  )
+);
+
+@use 'element-plus/theme-chalk/src/index.scss' as *;
+
+:root:root {
+  --el-text-color-placeholder: #ccd0d9;
+  --el-text-color-placeholder-hover: #99a2b3;
+  --el-text-color-regular: #001640;
+  --el-overlay-color-lighter: rgba(0, 0, 0, 0.3)
+}
+
+.el-button {
+  --el-button-text-color: #334566;
+  --el-button-bg-color: #fff;
+  --el-button-border-color: #e5e7eb;
+
+  --el-button-hover-text-color: #334566;
+  --el-button-hover-bg-color: #fff;
+  --el-button-hover-border-color: #d9dce3;
+
+  --el-button-active-text-color: #ccd0d9;
+  --el-button-active-bg-color: #fff;
+  --el-button-active-border-color: #d9dce3;
+
+  --el-button-disabled-border-color: #e5e7eb;
+  --el-button-disabled-bg-color: #fff;
+  --el-button-disabled-text-color: #ccd0d9;
+  &--primary {
+    --el-button-text-color: #fff;
+    --el-button-bg-color: #7033ff;
+    --el-button-border-color: #7033ff;
+
+    --el-button-hover-text-color: #fff;
+    --el-button-hover-border-color: #5f1bff;
+    --el-button-hover-bg-color: #5f1bff;
+
+    --el-button-active-bg-color: #5f1bff;
+    --el-button-active-border-color: #5f1bff;
+    --el-button-active-text-color: rgba(255, 255, 255, 0.5);
+
+    --el-button-disabled-bg-color: #7033ff;
+    --el-button-disabled-border-color: #7033ff;
+    --el-button-disabled-text-color: rgba(255, 255, 255, 0.5);
+  }
+  font-weight: 400;
+  .el-icon {
+    font-size: 16px;
+  }
+  .icon {
+    font-size: 16px;
+    color: inherit;
+  }
+}

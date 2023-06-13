@@ -1,0 +1,92 @@
+@import '@/assets/styles/element/index.scss';
+@import '@/assets/styles/common.scss';
+
+* {
+  font-family: 'Poppins';
+  box-sizing: border-box;
+}
+body {
+  min-width: 1200px;
+  overflow-x: auto;
+}
+
+body,
+ul,
+li,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b2b9c5;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #b2b9c5;
+}
+@keyframes opcity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#v-tip {
+  position: fixed;
+  padding: 5px 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  max-width: 560px;
+  z-index: 1000;
+  display: block;
+  border-radius: 4px;
+  animation: opcity 0.3s ease-in;
+  font-size: 12px;
+  transition: opcity 0.3s;
+  $w: 8px;
+  word-break: break-all;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    display: inline-block;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.8);
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link id="ico-logo" rel="icon" type="image/svg+xml" href="/logo-kyt.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KYT</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const getVersionIcon = () => {
+        const host = window.location.host
+        console.log(host)
+        if (host === 'g42-kyt.beosin.com') {
+          return '/logo-presight-64.ico'
+        }
+        // if (host === 'localhost:5173') {
+        //   return '/logo-presight-64.ico'
+        // }
+        // if (host === '124.71.132.90:3001') {
+        //   return '/logo-presight-64.ico'
+        // }
+        return '/logo-kyt.ico'
+      }
+      const ico = document.getElementById('ico-logo').setAttribute('href', getVersionIcon())
+      // console.log(ico)
+
+      ;(function (win, export_obj) {
+        win['LogAnalyticsObject'] = export_obj
+        if (!win[export_obj]) {
+          function _collect() {
+            _collect.q.push(arguments)
+          }
+          _collect.q = _collect.q || []
+          win[export_obj] = _collect
+        }
+        win[export_obj].l = +new Date()
+      })(window, 'collectEvent')
+    </script>
+    <script
+      async
+      src="https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.1.2.js"
+    ></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
