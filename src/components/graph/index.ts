@@ -12,6 +12,7 @@ type D = {
 }
 
 type Props = {
+  defaultNodeType?: string
   beforeCreate?: (options: { registerNode: RegisterNode }, g6: typeof G6) => void
   onNodeClick: (model: NodeModel, item: Item) => void
   onEdgeClick: (model: { targetModel: NodeModel; sourceModel: NodeModel }, item: IEdge) => void
@@ -44,6 +45,7 @@ class Graph {
     props?.beforeCreate && props.beforeCreate({ registerNode }, G6)
     const graph = createG6(data, {
       ...options,
+      defaultNodeType: props?.defaultNodeType,
       edgeLabelRender: props?.edgeLabelRender,
       hideClip: props?.hideClip,
       getEdgeStroke: props?.getEdgeStroke,

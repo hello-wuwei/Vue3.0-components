@@ -1,21 +1,8 @@
 <template>
   <div class="app-container">
-    <SearchSelect
-      v-model="value"
-      style="width: 100%"
-      :options="remote.suspicious.options"
-      :remote-method="remote.suspicious.method"
-    />
+    <router-view />
   </div>
 </template>
-
-<script lang="ts" setup>
-import { SearchSelect } from '@/components/SearchSelect/lib/index.es'
-import useRemoteSearch from '@/use-hooks/use-remote-search'
-import '@/components/SearchSelect/lib/style.css'
-const remote = useRemoteSearch()
-const value = ref([])
-</script>
 
 <style lang="scss">
 html,

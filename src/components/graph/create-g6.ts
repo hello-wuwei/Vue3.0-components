@@ -10,10 +10,11 @@ export type CreateG6Options = {
   nodeTooltipRender?: TooltipOptions['nodeTooltipRender']
   edgeTooltipRender?: TooltipOptions['edgeTooltipRender']
   getEdgeStroke?: EdgeOptions['getEdgeStroke']
+  defaultNodeType?: string
 }
 const createG6 = (
   data: any,
-  { el, edgeLabelRender, nodeTooltipRender, edgeTooltipRender, hideClip, getEdgeStroke }: CreateG6Options
+  { el, edgeLabelRender, nodeTooltipRender, edgeTooltipRender, hideClip, getEdgeStroke, defaultNodeType }: CreateG6Options
 ) => {
   const height = el.offsetHeight || 800
   const width = el.offsetWidth || 1000
@@ -33,7 +34,7 @@ const createG6 = (
       default: ['drag-canvas', 'zoom-canvas'],
     },
     defaultNode: {
-      type: 'normal-address-node',
+      type: defaultNodeType,
     },
     defaultEdge: {
       type: 'default-edge',
