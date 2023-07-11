@@ -1,7 +1,6 @@
 import NodeModel from '@/components/graph/type'
 import { INodeGroup } from '@/components/graph/with-base-config'
 import createNode from './create-node'
-import { getContent } from './normal-node'
 
 const r = 26
 
@@ -9,11 +8,8 @@ const config = {
   r: r + 5,
   options: {},
   draw(cfg: NodeModel, group: INodeGroup) {
-    const { img, icon, text } = getContent(cfg)
     createNode(cfg, group, {
-      img,
-      icon,
-      text,
+      text: cfg.label as string,
       attrs: { fill: '#7033FF', lineWidth: 0 },
       textAttrs: { fill: '#fff' },
     })

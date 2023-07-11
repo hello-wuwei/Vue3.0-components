@@ -5,13 +5,13 @@ const asyncRoutes: Array<RouteRecordRaw> = [
   {
     name: 'SelectSearch',
     path: '/doc/select-search',
-    component: () => import('@/views/SearchSelect/index.vue')
+    component: () => import('@/views/SearchSelect/index.vue'),
   },
   {
     name: 'Graph',
     path: '/doc/graph',
-    component: () => import('@/views/Graph/index.vue')
-  }
+    component: () => import('@/views/Graph/index.vue'),
+  },
 ]
 
 export default asyncRoutes

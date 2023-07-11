@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import Graph from '@/components/graph';
+import Graph from '@/components/graph'
 import normalNode from '@/utils/graph-node/normal-node'
 import rootNode from '@/utils/graph-node/root-node'
 
@@ -13,55 +13,58 @@ const { createGraph } = new Graph({
   beforeCreate({ registerNode }) {
     registerNode('normal-node', normalNode)
     registerNode('root-node', rootNode)
-  }
+  },
 })
 
 onMounted(() => {
-  createGraph(data.value, { el: graph.value! } )
+  createGraph(data.value, { el: graph.value! })
 })
-  const data = ref([
+const data = ref({
+  label: 'node-0',
+  children: [
     {
       label: 'node-1',
       chlidren: [
         {
           label: 'node-11',
-          chlidren: [{ label: 'node-111' }]
-        }
-      ]
+          chlidren: [{ label: 'node-111' }],
+        },
+      ],
     },
     {
       label: 'node-2',
       chlidren: [
         {
           label: 'node-21',
-          chlidren: [{ label: 'node-211' }]
-        }
-      ]
+          chlidren: [{ label: 'node-211' }],
+        },
+      ],
     },
     {
       label: 'node-3',
       chlidren: [
         {
           label: 'node-31',
-        }
-      ]
+        },
+      ],
     },
     {
       label: 'node-4',
       chlidren: [
         {
           label: 'node-41',
-        }
-      ]
+        },
+      ],
     },
     {
       label: 'node-5',
       chlidren: [
         {
           label: 'node-51',
-          chlidren: [{ label: 'node-511' }]
-        }
-      ]
-    }
-  ])
+          chlidren: [{ label: 'node-511' }],
+        },
+      ],
+    },
+  ],
+})
 </script>

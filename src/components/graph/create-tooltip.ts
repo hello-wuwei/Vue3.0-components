@@ -5,7 +5,7 @@ export type TooltipOptions = {
   nodeTooltipRender?: (model: NodeModel) => string
   edgeTooltipRender?: (model: { targetModel: NodeModel; sourceModel: NodeModel }) => string
 }
-const tooltipNames = ['address-node', 'edge-line', 'action']
+
 export default ({ nodeTooltipRender, edgeTooltipRender }: TooltipOptions) => {
   return {
     offsetX: 10,
@@ -55,7 +55,14 @@ export default ({ nodeTooltipRender, edgeTooltipRender }: TooltipOptions) => {
     },
     shouldBegin: (e: any) => {
       const names = e.target.get('names')
-      if (names && tooltipNames.includes(names[0])) {
+      if (!names) return false
+      if (names.includes('address-node') && nodeTooltipRender) {
+        return true
+      }
+      if (names.includes('edge-line') && edgeTooltipRender) {
+        return true
+      }
+      if (names.includes('action')) {
         return true
       }
       return false

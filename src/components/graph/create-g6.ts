@@ -1,20 +1,30 @@
-import G6 from '@antv/g6'
+import G6, { LayoutConfig } from '@antv/g6'
 
 import registerEdge, { EdgeOptions } from './register-edge'
 import createTooltip, { TooltipOptions } from './create-tooltip'
 
 export type CreateG6Options = {
   el: HTMLDivElement
+  defaultNodeType?: string
+  layout?: LayoutConfig
   edgeLabelRender?: EdgeOptions['edgeLabelRender']
   hideClip?: EdgeOptions['hideClip']
   nodeTooltipRender?: TooltipOptions['nodeTooltipRender']
   edgeTooltipRender?: TooltipOptions['edgeTooltipRender']
   getEdgeStroke?: EdgeOptions['getEdgeStroke']
-  defaultNodeType?: string
 }
 const createG6 = (
   data: any,
-  { el, edgeLabelRender, nodeTooltipRender, edgeTooltipRender, hideClip, getEdgeStroke, defaultNodeType }: CreateG6Options
+  {
+    el,
+    defaultNodeType,
+    layout,
+    edgeLabelRender,
+    nodeTooltipRender,
+    edgeTooltipRender,
+    hideClip,
+    getEdgeStroke,
+  }: CreateG6Options
 ) => {
   const height = el.offsetHeight || 800
   const width = el.offsetWidth || 1000
@@ -61,6 +71,7 @@ const createG6 = (
           FRONT: 'left',
         }[d.data.direction as 'BACK' | 'FRONT']
       },
+      ...layout,
     },
     plugins: [minimap, tooltip],
   })

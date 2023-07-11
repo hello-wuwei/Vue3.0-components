@@ -1,8 +1,9 @@
-import G6, { TreeGraph, Item, IEdge, IG6GraphEvent, TreeGraphData } from '@antv/g6'
+import G6, { TreeGraph, Item, IEdge, IG6GraphEvent, TreeGraphData, LayoutConfig } from '@antv/g6'
 import createG6 from './create-g6'
 import NodeModel from './type'
 import withBaseConfig, { CustomConfig } from './with-base-config'
 import { GetBtnOptions } from './action-render'
+import './style.css'
 
 type D = {
   flow: 'FRONT' | 'BACK'
@@ -13,6 +14,7 @@ type D = {
 
 type Props = {
   defaultNodeType?: string
+  layout?: LayoutConfig
   beforeCreate?: (options: { registerNode: RegisterNode }, g6: typeof G6) => void
   onNodeClick: (model: NodeModel, item: Item) => void
   onEdgeClick: (model: { targetModel: NodeModel; sourceModel: NodeModel }, item: IEdge) => void
@@ -41,11 +43,11 @@ class Graph {
   createGraph = (data: any, options: { el: HTMLDivElement }) => {
     const { registerNode } = this
     const props = this.props
-    console.log(props)
     props?.beforeCreate && props.beforeCreate({ registerNode }, G6)
     const graph = createG6(data, {
       ...options,
       defaultNodeType: props?.defaultNodeType,
+      layout: props?.layout,
       edgeLabelRender: props?.edgeLabelRender,
       hideClip: props?.hideClip,
       getEdgeStroke: props?.getEdgeStroke,
@@ -103,7 +105,7 @@ class Graph {
       if (!names) return
       if (names.includes('address-node')) {
         const model = e.item!.getModel() as NodeModel
-        props.onNodeClick!(model, e.item!)
+        props.onNodeClick && props.onNodeClick(model, e.item!)
         return
       }
       const model = e.item!.getModel() as NodeModel
@@ -118,7 +120,7 @@ class Graph {
       const targetModel = item.getTarget().getModel() as NodeModel
       const sourceModel = item.getSource().getModel() as NodeModel
       if (names.includes('edge-line')) {
-        props.onEdgeClick!({ targetModel, sourceModel }, item)
+        props.onEdgeClick && props.onEdgeClick({ targetModel, sourceModel }, item)
         return
       }
       if (names.includes('clip')) {
