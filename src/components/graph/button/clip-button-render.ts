@@ -1,5 +1,5 @@
 import { IGroup } from '@antv/g6'
-import clip from '@/assets/images/clip.png'
+import clip from '../assets/clip.png'
 import toContainer from './to-container'
 
 type ClipOptions = { x: number; y: number; r?: number }

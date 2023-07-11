@@ -1,0 +1,26 @@
+{
+  "name": "chain-graph",
+  "version": "0.1.0",
+  "description": "It is a graph that base @antv/g6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hello-wuwei/Vue3.0-components.git"
+  },
+  "keywords": [
+    "Graph",
+    "antv/g6",
+    "g6",
+    "TreeGraph"
+  ],
+  "author": "wuwei",
+  "license": "ISC",
+  "types": "./index.d.ts",
+  "bugs": {
+    "url": "https://github.com/hello-wuwei/Vue3.0-components/issues"
+  },
+  "homepage": "https://github.com/hello-wuwei/Vue3.0-components#readme"
+}

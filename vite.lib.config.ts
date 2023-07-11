@@ -33,18 +33,18 @@ export default defineConfig((cfg) => {
   return {
     build: {
       lib: {
-        entry: resolve(__dirname, 'src/components/SearchSelect/index.ts'),
+        entry: resolve(__dirname, 'src/components/graph/index.ts'),
         // 组件库名字
-        name: 'vue3.0-components',
-        fileName: (format) => `index.${format}.js`,
+        name: 'graph',
+        fileName: () => `index.js`,
         // 输出格式
         formats: ['es'],
       },
-      outDir: resolve(__dirname, 'src/components/SearchSelect/lib'),
-      emptyOutDir: true,
+      outDir: resolve(__dirname, 'src/lib/graph'),
+      emptyOutDir: false,
       rollupOptions: {
         //忽略打包vue文件
-        external: ['vue', 'lodash', '@element-plus/icons-vue'],
+        external: ['@antv/g6'],
       },
     },
 
