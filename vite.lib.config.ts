@@ -35,7 +35,7 @@ export default defineConfig((cfg) => {
       lib: {
         entry: resolve(__dirname, 'src/components/graph/index.ts'),
         // 组件库名字
-        name: 'graph',
+        name: 'chain-graph',
         fileName: () => `index.js`,
         // 输出格式
         formats: ['es'],
@@ -51,7 +51,7 @@ export default defineConfig((cfg) => {
     plugins: [
       setupName(),
       Vue(),
-      // ...plugins,
+      ...plugins,
       svg({ dir: resolve('src/assets/svg'), prefix: 'svg' }),
       VitePluginFonts({
         google: {

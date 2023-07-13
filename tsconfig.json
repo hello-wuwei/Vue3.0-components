@@ -8,8 +8,6 @@
     "jsx": "preserve",
     "sourceMap": true,
     "allowJs": true,
-    "declaration": true,
-    "outDir": "src/lib/graph",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,

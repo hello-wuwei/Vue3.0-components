@@ -13,9 +13,9 @@ type D = {
 }
 
 type Props = {
-  defaultNodeType?: string
-  layout?: LayoutConfig
-  beforeCreate?: (options: { registerNode: RegisterNode }, g6: typeof G6) => void
+  defaultNodeType: string
+  layout: LayoutConfig
+  beforeCreate: (options: { registerNode: RegisterNode }, g6: typeof G6) => void
   onNodeClick: (model: NodeModel, item: Item) => void
   onEdgeClick: (model: { targetModel: NodeModel; sourceModel: NodeModel }, item: IEdge) => void
   extendMethod: (model: NodeModel, dic: D, names: string[]) => TreeGraphData[] | Promise<TreeGraphData[]>

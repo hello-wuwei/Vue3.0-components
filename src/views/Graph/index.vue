@@ -3,17 +3,19 @@
 </template>
 
 <script lang="ts" setup>
-import Graph from 'chain-graph'
+// import Graph from '@/lib/graph'
+// import Graph from 'chain-graph'
+import ChainGraph from 'chaingraph'
 // import Graph from '@/components/graph'
 import normalNode from '@/utils/graph-node/normal-node'
 import rootNode from '@/utils/graph-node/root-node'
 
 const graph = ref<HTMLDivElement>()
-const { createGraph } = new Graph({
+const { createGraph } = new ChainGraph({
   defaultNodeType: 'normal-node',
   beforeCreate({ registerNode }) {
-    registerNode('normal-node', normalNode)
-    registerNode('root-node', rootNode)
+    registerNode('normal-node', normalNode, 'circle')
+    registerNode('root-node', rootNode, 'circle')
   },
   getBtnOptions(cfg) {
     const isFront = cfg?.direction !== 'BACK'
