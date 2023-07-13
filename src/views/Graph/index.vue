@@ -3,9 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-// import Graph from '@/lib/graph'
-// import Graph from 'chain-graph'
-import ChainGraph from 'chaingraph'
+import ChainGraph from 'chain-graph'
 // import Graph from '@/components/graph'
 import normalNode from '@/utils/graph-node/normal-node'
 import rootNode from '@/utils/graph-node/root-node'
